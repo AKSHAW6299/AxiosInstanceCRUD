@@ -1,12 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 function LandingPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-100 to-indigo-100 flex flex-col">
       {/* Header/Navigation */}
-      <header className="bg-white shadow-md p-4">
+      <header className="bg-white shadow-md p-4 sticky top-0 z-50">
         <nav className="container mx-auto flex justify-between items-center">
-          <div className="text-2xl font-semibold text-blue-700">SkillUp Aacadmy</div>
+          <Link to={'/'}>
+            <div className="text-2xl font-semibold text-blue-700">SkillUp Aacadmy</div>
+          </Link>
           <ul className="flex space-x-4">
             <li><a href="#cards" className="hover:text-blue-600">Features</a></li>
             <li><a href="#contact" className="hover:text-blue-600">Contact</a></li>
@@ -36,45 +40,56 @@ function LandingPage() {
           <h2 className="text-3xl font-semibold text-blue-800 mb-8">Explore Our Key Features</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Card 1 */}
-            <div className="bg-white rounded-lg shadow-xl p-6 hover:shadow-2xl transition-shadow duration-300">
-              <div className="mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-blue-600 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
+            <Link to={"/create"}>
+              <div className="bg-white rounded-lg shadow-xl p-6 hover:shadow-2xl transition-shadow duration-300">
+                <div className="mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-blue-600 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold text-blue-700 mb-2">Create</h3>
+                <p className="text-gray-600">Gain insights with real-time data visualizations and reports.</p>
               </div>
-              <h3 className="text-xl font-semibold text-blue-700 mb-2">Create</h3>
-              <p className="text-gray-600">Gain insights with real-time data visualizations and reports.</p>
-            </div>
+            </Link>
+
             {/* Card 2 */}
-            <div className="bg-white rounded-lg shadow-xl p-6 hover:shadow-2xl transition-shadow duration-300">
-              <div className="mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-blue-600 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                </svg>
+            <Link to={"/read"}>
+              <div className="bg-white rounded-lg shadow-xl p-6 hover:shadow-2xl transition-shadow duration-300">
+                <div className="mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-blue-600 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold text-blue-700 mb-2">Read</h3>
+                <p className="text-gray-600">Connect with your favorite tools and services for a streamlined workflow.</p>
               </div>
-              <h3 className="text-xl font-semibold text-blue-700 mb-2">Read</h3>
-              <p className="text-gray-600">Connect with your favorite tools and services for a streamlined workflow.</p>
-            </div>
+            </Link>
+
             {/* Card 3 */}
-            <div className="bg-white rounded-lg shadow-xl p-6 hover:shadow-2xl transition-shadow duration-300">
-              <div className="mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-blue-600 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10v11a2 2 0 002 2h14a2 2 0 002-2V10M3 10l7-4m7 4l-7-4" />
-                </svg>
+            <Link to={"/update"}>
+              <div className="bg-white rounded-lg shadow-xl p-6 hover:shadow-2xl transition-shadow duration-300">
+                <div className="mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-blue-600 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10v11a2 2 0 002 2h14a2 2 0 002-2V10M3 10l7-4m7 4l-7-4" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold text-blue-700 mb-2">Update</h3>
+                <p className="text-gray-600">Work together with your team in real-time and enhance productivity.</p>
               </div>
-              <h3 className="text-xl font-semibold text-blue-700 mb-2">Update</h3>
-              <p className="text-gray-600">Work together with your team in real-time and enhance productivity.</p>
-            </div>
+            </Link>
+
             {/* Card 4 */}
-            <div className="bg-white rounded-lg shadow-xl p-6 hover:shadow-2xl transition-shadow duration-300">
-              <div className="mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-blue-600 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                </svg>
+            <Link to={"/delete"}>
+              <div className="bg-white rounded-lg shadow-xl p-6 hover:shadow-2xl transition-shadow duration-300">
+                <div className="mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-blue-600 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold text-blue-700 mb-2">Delete</h3>
+                <p className="text-gray-600">Keep your data safe and accessible from anywhere with our secure cloud storage.</p>
               </div>
-              <h3 className="text-xl font-semibold text-blue-700 mb-2">Delete</h3>
-              <p className="text-gray-600">Keep your data safe and accessible from anywhere with our secure cloud storage.</p>
-            </div>
+            </Link>
           </div>
         </div>
       </section>
