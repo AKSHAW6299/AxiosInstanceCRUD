@@ -6,7 +6,7 @@ function LandingPage() {
       {/* Header/Navigation */}
       <header className="bg-white shadow-md p-4">
         <nav className="container mx-auto flex justify-between items-center">
-          <div className="text-2xl font-semibold text-blue-700">My App</div>
+          <div className="text-2xl font-semibold text-blue-700">SkillUp Aacadmy</div>
           <ul className="flex space-x-4">
             <li><a href="#cards" className="hover:text-blue-600">Features</a></li>
             <li><a href="#contact" className="hover:text-blue-600">Contact</a></li>
@@ -18,11 +18,11 @@ function LandingPage() {
       {/* Hero Section */}
       <section className="flex-grow flex items-center justify-center p-8">
         <div className="container mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-blue-800 mb-4">
-            Discover the Power of Simplicity
+          <h1 className="text-4xl md:text-5xl font-semibold text-blue-800 mb-4">
+            CRUD using axios instances
           </h1>
           <p className="text-lg text-gray-700 mb-8">
-            Streamline your workflow and achieve your goals with our intuitive platform.
+            Streamline your workflow and achieve your goals with our intuitive API integration method
           </p>
           <button className="bg-indigo-600 hover:bg-indigo-700 text-white py-3 px-6 rounded-full text-lg">
             Get Started Free
@@ -42,7 +42,7 @@ function LandingPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-blue-700 mb-2">Analytics Dashboard</h3>
+              <h3 className="text-xl font-semibold text-blue-700 mb-2">Create</h3>
               <p className="text-gray-600">Gain insights with real-time data visualizations and reports.</p>
             </div>
             {/* Card 2 */}
@@ -52,7 +52,7 @@ function LandingPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-blue-700 mb-2">Seamless Integration</h3>
+              <h3 className="text-xl font-semibold text-blue-700 mb-2">Read</h3>
               <p className="text-gray-600">Connect with your favorite tools and services for a streamlined workflow.</p>
             </div>
             {/* Card 3 */}
@@ -62,7 +62,7 @@ function LandingPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10v11a2 2 0 002 2h14a2 2 0 002-2V10M3 10l7-4m7 4l-7-4" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-blue-700 mb-2">Collaborative Tools</h3>
+              <h3 className="text-xl font-semibold text-blue-700 mb-2">Update</h3>
               <p className="text-gray-600">Work together with your team in real-time and enhance productivity.</p>
             </div>
             {/* Card 4 */}
@@ -72,7 +72,7 @@ function LandingPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-blue-700 mb-2">Secure Cloud Storage</h3>
+              <h3 className="text-xl font-semibold text-blue-700 mb-2">Delete</h3>
               <p className="text-gray-600">Keep your data safe and accessible from anywhere with our secure cloud storage.</p>
             </div>
           </div>
@@ -90,7 +90,7 @@ function LandingPage() {
 
       {/* Footer */}
       <footer className="bg-white p-4 text-center">
-        <p className="text-gray-600">&copy; {new Date().getFullYear()} My App. All rights reserved.</p>
+        <p className="text-gray-600">&copy; {new Date().getFullYear()} SkillUp Aacadmy. All rights reserved.</p>
       </footer>
     </div>
   );
