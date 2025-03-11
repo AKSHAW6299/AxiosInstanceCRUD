@@ -12,7 +12,7 @@ const initialValues = {
 
 function Delete() {
   const validationSchema = Yup.object({
-    queryParams: Yup.number().required('QueryParams is required').positive('QueryParams must be a positive number'),
+    queryParams: Yup.number().required('QueryParams is required!').positive('QueryParams must be a positive number!'),
   });
 
   const handleDelete = async (values) => {
@@ -39,6 +39,11 @@ function Delete() {
         </nav>
       </header>
 
+      <div className='mt-5 text-center'>
+        <h1 className="text-2xl font-semibold">Delete operation : DELETE API</h1>
+
+      </div>
+
       <div className="container mx-auto p-4">
         <Formik
           initialValues={initialValues}
@@ -49,7 +54,7 @@ function Delete() {
             <Form className="max-w-md mx-auto mt-8">
               <div className="mb-4">
                 <label htmlFor="queryParams" className="block text-gray-700 text-sm font-bold mb-2">
-                  QueryParams:
+                  Enter QueryParams:
                 </label>
                 <Field
                   type="number"
