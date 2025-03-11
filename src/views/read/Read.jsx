@@ -32,7 +32,7 @@ function Read() {
       toast.error('Failed to load data!', { position: 'top-right', autoClose: 3000 });
     }
   };
-  
+
 
   // Define columns for DataTable
   const columns = [
@@ -62,6 +62,9 @@ function Read() {
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
+      {/* Toast Container */}
+      <ToastContainer />
+
       {/* Header/Navigation */}
       <header className="bg-gradient-to-br from-blue-100 to-indigo-100 shadow-md p-4 sticky top-0 z-50">
         <nav className="container mx-auto flex justify-between items-center">
@@ -73,7 +76,7 @@ function Read() {
       </header>
 
       <div className="text-center mt-6">
-        <h1 className="text-2xl font-semibold mb-4">Read operation using dummy api (GET) integration</h1>
+        <h1 className="text-2xl font-semibold mb-4">Read operation : GET API</h1>
         {/* DataTable */}
         {data && (
           <DataTable

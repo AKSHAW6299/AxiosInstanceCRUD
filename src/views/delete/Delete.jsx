@@ -1,7 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { deleteApi } from '../../services/DeleteApi';
+
 
 function Delete() {
+
+  useEffect(() => {
+    deleteOperation();
+  }, []);
+
+  const deleteOperation = async () => {
+    try {
+      const querytrams = 1;
+      const response = await deleteApi(querytrams);
+      console.log('response :', response?.data);
+    } catch (error) {
+      console.error('Error deleting data:', error);    
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-100 to-indigo-100 flex flex-col">
       {/* Header/Navigation */}
