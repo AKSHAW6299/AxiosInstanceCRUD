@@ -1,8 +1,8 @@
-// import { axiosInstance } from "./axiosInstance";
+import { axiosInstance } from "./axiosInstance";
 
-// let URL = `https://jsonplaceholder.typicode.com`
+let URL = `https://jsonplaceholder.typicode.com`
 
 
-// export async function createApi() {
-//     return await axiosInstance.get(`${URL}/posts`);
-// }
+export async function createApi() {
+    return await axiosInstance.post(`${URL}/posts`);
+}
