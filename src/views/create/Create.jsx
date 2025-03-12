@@ -139,27 +139,30 @@ function Post() {
                 />
               </div>
 
-              <button
-                type="submit"
-                className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? 'Submiting...' : 'Submit'}
-              </button>
+              <div className='flex justify-between w-full'>
+                <div></div>
+                <button
+                  type="submit"
+                  className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Submiting...' : 'Submit'}
+                </button>
+              </div>
             </Form>
           )}
         </Formik>
       </div>
 
       <div className='py-5'>
-          {responseData && (
-            <div>
-              <h2 className="text-2xl font-semibold mb-4">Response Data</h2>
-              <pre className="bg-gray-200 p-4 rounded-lg overflow-x-auto">
-                {JSON.stringify(responseData, null, 2)}
-              </pre>
-            </div>
-          )}
+        {responseData && (
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">Response Data</h2>
+            <pre className="bg-gray-200 p-4 rounded-lg overflow-x-auto">
+              {JSON.stringify(responseData, null, 2)}
+            </pre>
+          </div>
+        )}
       </div>
 
     </div>

@@ -70,13 +70,16 @@ function Delete() {
                 />
               </div>
 
-              <button
+              <div className='flex justify-between'>
+                <div></div>
+                <button
                 type="submit"
                 className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? 'Deleting...' : 'Delete'}
               </button>
+              </div>
             </Form>
           )}
         </Formik>
