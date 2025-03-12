@@ -27,10 +27,10 @@ function Delete() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-100 to-indigo-100 flex flex-col">
+    <div className="min-h-screen bg-white flex flex-col">
       {/* Toast Container */}
       <ToastContainer />
-      <header className="bg-white shadow-md p-4 sticky top-0 z-50">
+      <header className="bg-gradient-to-br from-blue-100 to-indigo-100 shadow-md p-4 sticky top-0 z-50">
         <nav className="container mx-auto flex justify-between items-center">
           <Link to={'/'}>
             <div className="text-2xl font-semibold text-blue-700">SkillUp Academy</div>

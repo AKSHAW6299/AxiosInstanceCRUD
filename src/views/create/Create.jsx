@@ -12,9 +12,9 @@ function Post() {
   const [responseData, setResponseData] = useState('');
 
   const initialValues = {
-    title: '',
-    body: '',
-    userId: '',
+    title: 'Rohit Sharma',
+    body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    userId: '123',
   };
 
 
@@ -51,10 +51,10 @@ function Post() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-100 to-indigo-100 flex flex-col">
+    <div className="min-h-screen bg-white flex flex-col">
       {/* Toast Container */}
       <ToastContainer />
-      <header className="bg-white shadow-md p-4 sticky top-0 z-50">
+      <header className="bg-gradient-to-br from-blue-100 to-indigo-100 shadow-md p-4 sticky top-0 z-50">
         <nav className="container mx-auto flex justify-between items-center">
           <Link to={'/'}>
             <div className="text-2xl font-semibold text-blue-700">
@@ -64,7 +64,6 @@ function Post() {
           <div></div>
         </nav>
       </header>
-
       <div className="mt-5 text-center">
         <h1 className="text-2xl font-semibold">Create operation : POST API</h1>
       </div>
@@ -110,7 +109,7 @@ function Post() {
                   id="body"
                   name="body"
                   placeholder="Enter Body"
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 />
                 <ErrorMessage
                   name="body"
@@ -142,7 +141,7 @@ function Post() {
 
               <button
                 type="submit"
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? 'Submiting...' : 'Submit'}
