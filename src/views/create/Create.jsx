@@ -10,7 +10,7 @@ import { createApi } from '../../services/CreateApi';
 function Post() {
 
   const [responseData, setResponseData] = useState('');
-
+ 
   const initialValues = {
     title: 'Rohit Sharma',
     body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
@@ -50,6 +50,16 @@ function Post() {
     }
   };
 
+
+    if ("") {
+      return (
+          <div className="flex justify-center items-center" style={{ height: '100vh' }}>
+            <div className="spinner-border animate-spin border-t-4 border-blue-500 border-solid rounded-full w-16 h-16"></div>
+          </div>
+      );
+    }
+
+
   return (
     <div className="min-h-screen bg-white flex flex-col">
       {/* Toast Container */}
@@ -68,101 +78,103 @@ function Post() {
         <h1 className="text-2xl font-semibold">Create operation : POST API</h1>
       </div>
 
-      <div className="container mx-auto p-4">
-        <Formik
-          initialValues={initialValues}
-          validationSchema={validationSchema}
-          onSubmit={handleSubmit}
-        >
-          {({ isSubmitting }) => (
-            <Form className="max-w-md mx-auto mt-8">
-              <div className="mb-4">
-                <label
-                  htmlFor="title"
-                  className="block text-gray-700 text-sm font-bold mb-2"
-                >
-                  Title:
-                </label>
-                <Field
-                  type="text"
-                  id="title"
-                  name="title"
-                  placeholder="Enter Title"
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                />
-                <ErrorMessage
-                  name="title"
-                  component="div"
-                  className="text-red-500 text-sm mt-1"
-                />
-              </div>
+      <div className='grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 py-8'>
+        <div className="">
+          <Formik
+            initialValues={initialValues}
+            validationSchema={validationSchema}
+            onSubmit={handleSubmit}
+          >
+            {({ isSubmitting }) => (
+              <Form className="max-w-md mx-auto mt-8">
+                <div className="mb-4">
+                  <label
+                    htmlFor="title"
+                    className="block text-gray-700 text-sm font-bold mb-2"
+                  >
+                    Title:
+                  </label>
+                  <Field
+                    type="text"
+                    id="title"
+                    name="title"
+                    placeholder="Enter Title"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  />
+                  <ErrorMessage
+                    name="title"
+                    component="div"
+                    className="text-red-500 text-sm mt-1"
+                  />
+                </div>
 
-              <div className="mb-4">
-                <label
-                  htmlFor="body"
-                  className="block text-gray-700 text-sm font-bold mb-2"
-                >
-                  Body:
-                </label>
-                <Field
-                  as="textarea"
-                  id="body"
-                  name="body"
-                  placeholder="Enter Body"
-                  className="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                />
-                <ErrorMessage
-                  name="body"
-                  component="div"
-                  className="text-red-500 text-sm mt-1"
-                />
-              </div>
+                <div className="mb-4">
+                  <label
+                    htmlFor="body"
+                    className="block text-gray-700 text-sm font-bold mb-2"
+                  >
+                    Body:
+                  </label>
+                  <Field
+                    as="textarea"
+                    id="body"
+                    name="body"
+                    placeholder="Enter Body"
+                    className="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  />
+                  <ErrorMessage
+                    name="body"
+                    component="div"
+                    className="text-red-500 text-sm mt-1"
+                  />
+                </div>
 
-              <div className="mb-4">
-                <label
-                  htmlFor="userId"
-                  className="block text-gray-700 text-sm font-bold mb-2"
-                >
-                  UserId:
-                </label>
-                <Field
-                  type="number"
-                  id="userId"
-                  name="userId"
-                  placeholder="Enter UserId"
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                />
-                <ErrorMessage
-                  name="userId"
-                  component="div"
-                  className="text-red-500 text-sm mt-1"
-                />
-              </div>
+                <div className="mb-4">
+                  <label
+                    htmlFor="userId"
+                    className="block text-gray-700 text-sm font-bold mb-2"
+                  >
+                    UserId:
+                  </label>
+                  <Field
+                    type="number"
+                    id="userId"
+                    name="userId"
+                    placeholder="Enter UserId"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  />
+                  <ErrorMessage
+                    name="userId"
+                    component="div"
+                    className="text-red-500 text-sm mt-1"
+                  />
+                </div>
 
-              <div className='flex justify-between w-full'>
-                <div></div>
-                <button
-                  type="submit"
-                  className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? 'Submiting...' : 'Submit'}
-                </button>
-              </div>
-            </Form>
+                <div className='flex justify-between w-full'>
+                  <div></div>
+                  <button
+                    type="submit"
+                    className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? 'Submiting...' : 'Submit'}
+                  </button>
+                </div>
+              </Form>
+            )}
+          </Formik>
+        </div>
+
+        <div className='text-center mt-3'>
+          {responseData && (
+            <div>
+              <h6 className="text-xl font-semibold mb-4">Response Data</h6>
+              <pre className="bg-gray-200 p-4 rounded-lg overflow-x-auto">
+                {JSON.stringify(responseData, null, 2)}
+              </pre>
+            </div>
           )}
-        </Formik>
-      </div>
-
-      <div className='py-5'>
-        {responseData && (
-          <div>
-            <h2 className="text-2xl font-semibold mb-4">Response Data</h2>
-            <pre className="bg-gray-200 p-4 rounded-lg overflow-x-auto">
-              {JSON.stringify(responseData, null, 2)}
-            </pre>
-          </div>
-        )}
+        </div>
       </div>
 
     </div>
