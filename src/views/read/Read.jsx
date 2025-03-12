@@ -54,8 +54,18 @@ function Read() {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center" style={{ height: '100vh' }}>
-        <div className="spinner-border animate-spin border-t-4 border-blue-500 border-solid rounded-full w-16 h-16"></div>
+      <div className="min-h-screen bg-white flex flex-col">
+        <header className="bg-gradient-to-br from-blue-100 to-indigo-100 shadow-md p-4 sticky top-0 z-50">
+          <nav className="container mx-auto flex justify-between items-center">
+            <Link to={'/'}>
+              <div className="text-2xl font-semibold text-blue-700">SkillUp Aacadmy</div>
+            </Link>
+            <div></div>
+          </nav>
+        </header>
+        <div className="flex justify-center items-center" style={{ height: '100vh' }}>
+          <div className="spinner-border animate-spin border-t-4 border-blue-500 border-solid rounded-full w-16 h-16"></div>
+        </div>
       </div>
     );
   }
