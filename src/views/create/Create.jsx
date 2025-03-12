@@ -176,7 +176,7 @@ function Post() {
             <div style={{ height: '20px' }}></div>
             {loading && (
               <div className="flex justify-center items-center">
-                <div className="spinner-border animate-spin border-t-4 border-blue-500 border-solid rounded-full w-16 h-16"></div>
+                <div className="spinner-border animate-spin border-t-4 border-gray-500 border-solid rounded-full w-16 h-16"></div>
               </div>
             )}
             {responseData && (
