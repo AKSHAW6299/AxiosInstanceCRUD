@@ -48,7 +48,7 @@ function LandingPage() {
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-blue-700 mb-2">Create</h3>
-                <p className="text-gray-600">Gain insights with real-time data visualizations and reports.</p>
+                <p className="text-gray-600">Create operation : POST API</p>
               </div>
             </Link>
 
@@ -61,7 +61,7 @@ function LandingPage() {
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-blue-700 mb-2">Read</h3>
-                <p className="text-gray-600">Connect with your favorite tools and services for a streamlined workflow.</p>
+                <p className="text-gray-600">Read operation : GET API</p>
               </div>
             </Link>
 
@@ -74,7 +74,7 @@ function LandingPage() {
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-blue-700 mb-2">Update</h3>
-                <p className="text-gray-600">Work together with your team in real-time and enhance productivity.</p>
+                <p className="text-gray-600">Update operation : PUT & PATCH API</p>
               </div>
             </Link>
 
@@ -87,7 +87,7 @@ function LandingPage() {
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-blue-700 mb-2">Delete</h3>
-                <p className="text-gray-600">Keep your data safe and accessible from anywhere with our secure cloud storage.</p>
+                <p className="text-gray-600">Delete operation : DELETE API</p>
               </div>
             </Link>
           </div>

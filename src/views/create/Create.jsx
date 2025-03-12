@@ -66,7 +66,7 @@ function Post() {
       </header>
 
       <div className="mt-5 text-center">
-        <h1 className="text-2xl font-semibold">Post operation : POST API</h1>
+        <h1 className="text-2xl font-semibold">Create operation : POST API</h1>
       </div>
 
       <div className="container mx-auto p-4">
