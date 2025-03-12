@@ -10,7 +10,8 @@ import { createApi } from '../../services/CreateApi';
 function Post() {
 
   const [responseData, setResponseData] = useState('');
- 
+  const [loading, setLoading] = useState(false)
+
   const initialValues = {
     title: 'Rohit Sharma',
     body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
@@ -33,16 +34,20 @@ function Post() {
     // Desturctureing form values
     const { title, body, userId } = values;
 
+    setLoading(true)
+
     try {
       const response = await createApi({ title, body, userId }); // Pass the entire form values to postApi
       toast.success('Data created successfully!', {
         position: 'top-right',
         autoClose: 3000,
       });
+      setLoading(false)
       // console.log('response create :', response?.data);
       setResponseData(response?.data);
     } catch (error) {
       console.error('Error posting data:', error);
+      setLoading(false)
       toast.error('Error posting data!', {
         position: 'top-right',
         autoClose: 3000,
@@ -51,13 +56,13 @@ function Post() {
   };
 
 
-    if ("") {
-      return (
-          <div className="flex justify-center items-center" style={{ height: '100vh' }}>
-            <div className="spinner-border animate-spin border-t-4 border-blue-500 border-solid rounded-full w-16 h-16"></div>
-          </div>
-      );
-    }
+  // if (loading) {
+  //   return (
+  //     <div className="flex justify-center items-center" style={{ height: '100vh' }}>
+  //       <div className="spinner-border animate-spin border-t-4 border-blue-500 border-solid rounded-full w-16 h-16"></div>
+  //     </div>
+  //   );
+  // }
 
 
   return (
@@ -166,14 +171,21 @@ function Post() {
         </div>
 
         <div className='text-center mt-3'>
-          {responseData && (
-            <div>
-              <h6 className="text-xl font-semibold mb-4">Response Data</h6>
-              <pre className="bg-gray-200 p-4 rounded-lg overflow-x-auto">
+          <h6 className="text-xl font-semibold mb-4">Response Data</h6>
+          <div className='bg-gray-200'>
+            <div style={{ height: '20px' }}></div>
+            {loading && (
+              <div className="flex justify-center items-center">
+                <div className="spinner-border animate-spin border-t-4 border-blue-500 border-solid rounded-full w-16 h-16"></div>
+              </div>
+            )}
+            {responseData && (
+              <pre className="p-4 rounded-lg overflow-x-auto">
                 {JSON.stringify(responseData, null, 2)}
               </pre>
-            </div>
-          )}
+            )}
+            <div style={{ height: '220px' }}></div>
+          </div>
         </div>
       </div>
 
