@@ -18,7 +18,7 @@ function Read() {
   const fetchApiData = async () => {
     try {
       const response = await readApi();
-      console.log('response :', response?.data);
+      // console.log('response :', response?.data);
 
       setData(response?.data);
       setLoading(false);

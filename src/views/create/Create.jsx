@@ -28,7 +28,7 @@ function Post() {
   });
 
   const handleSubmit = async (values) => {
-    console.log('values :', values);
+    // console.log('values :', values);
 
     // Desturctureing form values
     const { title, body, userId } = values;
@@ -39,7 +39,7 @@ function Post() {
         position: 'top-right',
         autoClose: 3000,
       });
-      console.log('response create :', response?.data);
+      // console.log('response create :', response?.data);
       setResponseData(response?.data);
     } catch (error) {
       console.error('Error posting data:', error);

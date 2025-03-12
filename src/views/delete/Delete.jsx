@@ -19,7 +19,7 @@ function Delete() {
     try {
       const response = await deleteApi(values.queryParams);
       toast.success('Data deleted successfully!', { position: 'top-right', autoClose: 3000 });
-      console.log('response :', response?.data);
+      // console.log('response :', response?.data);
     } catch (error) {
       console.error('Error deleting data:', error);
       toast.error('Error deleting data!', { position: 'top-right', autoClose: 3000 });
