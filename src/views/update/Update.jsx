@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { putApi } from '../../services/PutApi';
 
 function Update() {
   const initialPutValues = {
@@ -15,10 +16,16 @@ function Update() {
     title: 'Suresh Raina',
   };
 
-  const handlePutSubmit = (values) => {
-    console.log('PUT Values:', values);
-    // Add your PUT API call here
-  };
+  const handlePutSubmit = async (values) => {
+    const { id, title, body, userId } = values;
+    try {
+      const response = await putApi({ id, title, body, userId });
+      console.log('response', response?.data);
+      alert(JSON.stringify(response?.data))
+    } catch (error) {
+      console.error('Error updating data:', error);
+    }
+  }
 
   const handlePatchSubmit = (values) => {
     console.log('PATCH Values:', values);
@@ -47,10 +54,10 @@ function Update() {
           {/* PUT API Form */}
           <div className="bg-white rounded-lg shadow p-6">
             <h4 className="text-xl font-semibold mb-4 text-gray-700">PUT API</h4>
-            <p className='mt-3 mb-3'>1) Requires complete body of the resource to be updated</p>
-            <p className='mt-3 mb-3'>2) It will create a new resource if it does not exist</p>
-            <p className='mt-3 mb-5'>3) The whole body replaced</p>
-
+            <p className='mt-3 mb-2'>1) Requires complete body of the resource to be updated</p>
+            <p className='mt-3 mb-2'>2) It will create a new resource if it does not exist</p>
+            <p className='mt-3 mb-3'>3) The whole body replaced</p>
+            <hr className='mb-5' />
             <Formik initialValues={initialPutValues} onSubmit={handlePutSubmit}>
               <Form className="space-y-4">
                 <div>
@@ -130,7 +137,9 @@ function Update() {
           {/* PATCH API Form */}
           <div className="bg-white rounded-lg shadow p-6">
             <h4 className="text-xl font-semibold mb-4 text-gray-700">PATCH API</h4>
-            <p className='mt-3 mb-5'>We only send the fields with the <span className='font-bold'>ubique id</span> to update</p>
+            <p className='mt-3 mb-2'>1) Very Fast</p>
+            <p className='mb-2'>2) We only send the <span className='font-bold'>field</span> with the <span className='font-bold'>ubique attribute</span> to update</p>
+            <hr className='mb-5' />
             <Formik initialValues={initialPatchValues} onSubmit={handlePatchSubmit}>
               <Form className="space-y-4">
                 <div>
