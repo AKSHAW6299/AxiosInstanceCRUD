@@ -29,7 +29,7 @@ function LandingPage() {
             Streamline your workflow and achieve your goals with our intuitive API integration method
           </p>
           <button className="bg-indigo-600 hover:bg-indigo-700 text-white py-3 px-6 rounded-full text-lg">
-            Get Started Free
+            Direct API Integration
           </button>
         </div>
       </section>
