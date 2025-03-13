@@ -3,15 +3,26 @@ import { Link } from 'react-router-dom';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 function Update() {
-  const initialValues = {
+  const initialPutValues = {
     id: 1,
     title: 'Rohit Sharma',
     body: 'Dummy Data',
     userId: 1,
   };
 
-  const handleSubmit = (values) => {
-    console.log(values);
+  const initialPatchValues = {
+    userId: 1,
+    title: 'Suresh Raina',
+  };
+
+  const handlePutSubmit = (values) => {
+    console.log('PUT Values:', values);
+    // Add your PUT API call here
+  };
+
+  const handlePatchSubmit = (values) => {
+    console.log('PATCH Values:', values);
+    // Add your PATCH API call here
   };
 
   return (
@@ -36,7 +47,11 @@ function Update() {
           {/* PUT API Form */}
           <div className="bg-white rounded-lg shadow p-6">
             <h4 className="text-xl font-semibold mb-4 text-gray-700">PUT API</h4>
-            <Formik initialValues={initialValues} onSubmit={handleSubmit}>
+            <p className='mt-3 mb-3'>1) Requires complete body of the resource to be updated</p>
+            <p className='mt-3 mb-3'>2) It will create a new resource if it does not exist</p>
+            <p className='mt-3 mb-5'>3) The whole body replaced</p>
+
+            <Formik initialValues={initialPutValues} onSubmit={handlePutSubmit}>
               <Form className="space-y-4">
                 <div>
                   <label htmlFor="id" className="block text-sm font-medium text-gray-700">
@@ -115,7 +130,51 @@ function Update() {
           {/* PATCH API Form */}
           <div className="bg-white rounded-lg shadow p-6">
             <h4 className="text-xl font-semibold mb-4 text-gray-700">PATCH API</h4>
-            {/* Add your PATCH API form here */}
+            <p className='mt-3 mb-5'>We only send the fields with the <span className='font-bold'>ubique id</span> to update</p>
+            <Formik initialValues={initialPatchValues} onSubmit={handlePatchSubmit}>
+              <Form className="space-y-4">
+                <div>
+                  <label htmlFor="userId" className="block text-sm font-medium text-gray-700">
+                    User ID:
+                  </label>
+                  <Field
+                    type="number"
+                    name="userId"
+                    id="userIdPatch"
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                  />
+                  <ErrorMessage
+                    name="userId"
+                    component="div"
+                    className="text-red-500 text-sm mt-1"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="title" className="block text-sm font-medium text-gray-700">
+                    Title:
+                  </label>
+                  <Field
+                    type="text"
+                    name="title"
+                    id="titlePatch"
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                  />
+                  <ErrorMessage
+                    name="title"
+                    component="div"
+                    className="text-red-500 text-sm mt-1"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full py-2 px-4 bg-indigo-600 hover:bg-indigo-700 rounded-md text-white font-semibold focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                >
+                  Submit
+                </button>
+              </Form>
+            </Formik>
           </div>
         </div>
       </div>
