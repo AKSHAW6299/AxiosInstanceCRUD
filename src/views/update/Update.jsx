@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { putApi } from '../../services/PutApi';
+import { patchApi } from '../../services/PatchApi';
 
 function Update() {
   const initialPutValues = {
@@ -20,17 +21,23 @@ function Update() {
     const { id, title, body, userId } = values;
     try {
       const response = await putApi({ id, title, body, userId });
-      console.log('response', response?.data);
+      // console.log('response', response?.data);
       alert(JSON.stringify(response?.data))
     } catch (error) {
       console.error('Error updating data:', error);
     }
   }
 
-  const handlePatchSubmit = (values) => {
-    console.log('PATCH Values:', values);
-    // Add your PATCH API call here
-  };
+const handlePatchSubmit = async (values) => {
+    const { userId, title } = values;
+    try {
+      const response = await patchApi({ userId, title });
+      // console.log('response', response?.data);
+      alert(JSON.stringify(response?.data))
+    } catch (error) {
+      console.error('Error updating data:', error);
+    }
+  }
 
   return (
     <div className="min-h-screen bg-gray-100">
