@@ -141,7 +141,7 @@ function Update() {
 
                 <button
                   type="submit"
-                  className="w-full py-2 px-4 bg-indigo-600 hover:bg-indigo-700 rounded-md text-white font-semibold focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                  className="w-full py-2 px-4 bg-gray-600 hover:bg-gray-700 rounded-md text-white font-semibold focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
                 >
                   Submit
                 </button>
@@ -193,7 +193,7 @@ function Update() {
 
                 <button
                   type="submit"
-                  className="w-full py-2 px-4 bg-indigo-600 hover:bg-indigo-700 rounded-md text-white font-semibold focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                  className="w-full py-2 px-4 bg-gray-600 hover:bg-gray-700 rounded-md text-white font-semibold focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
                 >
                   Submit
                 </button>
